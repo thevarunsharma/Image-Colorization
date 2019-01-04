@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Image Colorizer</title>
+</head>
+<body>
+  <center><h1>Image Colorizer</h1>
+  <form action = "" method = "POST" enctype = "multipart/form-data">
+    <input type = "file" name = "file">
+    <input type = "submit" value="Upload Image">
+  </form></center>
+  {% if after %}
+  <br/><center>
+    <img src="{{url_for('static', filename='gray.jpg')}}" width="200" style="margin:6vw;border:2px solid black;">
+    <img src="{{url_for('static', filename='color.jpg')}}" width="200" style="margin:6vw;border:2px solid black;">
+  </center>
+  {% endif %}
+</body>
+</html>
