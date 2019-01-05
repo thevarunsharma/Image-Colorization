@@ -8,7 +8,7 @@ graph = tf.get_default_graph()
 
 def get_colored(gray_path='./static/gray.jpg', color_path='./static/color.jpg'):
     gray = imresize(imread(gray_path), (32,32))
-    if gray.shape[2]>=3: gray = gray.sum(axis=-1)/3
+    if gray.shape[2]>=3: gray = gray.mean(axis=-1)
     gray = gray/255
     with graph.as_default():
         color = model.predict(gray.reshape((1,32,32,1)))[0]
